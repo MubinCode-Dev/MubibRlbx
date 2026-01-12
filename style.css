@@ -1,12 +1,40 @@
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #000000, #001f3f, #0066ff);
+    background: radial-gradient(circle at top, #050b1a, #000000 70%);
     font-family: 'Anton', sans-serif;
     overflow: hidden;
+    color: white;
+}
+
+/* Star background */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: moveStar 20s linear infinite;
+}
+
+@keyframes moveStar {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100vh); }
 }
 
 .screen {
+    position: relative;
+    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -15,10 +43,9 @@ body {
 }
 
 .text {
-    position: absolute;
     font-size: 4rem;
     color: white;
-    text-shadow: 0 0 15px white, 0 0 30px #4da6ff;
+    text-shadow: 0 0 6px rgba(255,255,255,0.6);
     opacity: 0;
     animation: fade 4s forwards;
 }
@@ -34,49 +61,47 @@ body {
 
 #continueBox {
     display: none;
-    padding: 20px 50px;
+    padding: 16px 40px;
     background: black;
-    border-radius: 10px;
+    border-radius: 8px;
     cursor: pointer;
-    animation: glowFade 2s forwards;
+    opacity: 0;
+    animation: softFade 2s forwards;
 }
 
 #continueText {
-    font-size: 2rem;
-    color: cyan;
-    text-shadow: 0 0 10px cyan, 0 0 25px cyan;
+    font-size: 1.6rem;
+    color: #7fd3ff;
+    text-shadow: 0 0 8px rgba(127,211,255,0.7);
 }
 
-@keyframes glowFade {
-    from {opacity: 0;}
-    to {opacity: 1;}
+@keyframes softFade {
+    to { opacity: 1; }
 }
 
-/* Store Page */
+/* Store fade in */
+.store {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.store.show {
+    opacity: 1;
+}
 
 .nav {
     position: absolute;
-    top: 20px;
+    top: 25px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .nav button {
     background: black;
     border: none;
-    padding: 12px 25px;
-    font-size: 1.1rem;
+    padding: 10px 22px;
+    color: white;
     font-family: 'Anton', sans-serif;
-    color: white;
+    text-shadow: 0 0 6px rgba(255,255,255,0.6);
     cursor: pointer;
-    text-shadow: 0 0 10px white;
-    box-shadow: 0 0 15px rgba(255,255,255,0.4);
-}
-
-.description {
-    max-width: 700px;
-    text-align: center;
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: 0 0 10px #4da6ff;
 }
