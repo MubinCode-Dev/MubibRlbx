@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #001f3f, #0066ff);
+    font-family: 'Anton', sans-serif;
+    overflow: hidden;
+}
+
+.screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    position: absolute;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 15px white, 0 0 30px #4da6ff;
+    opacity: 0;
+    animation: fade 4s forwards;
+}
+
+#second { animation-delay: 4s; }
+
+@keyframes fade {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#continueBox {
+    display: none;
+    padding: 20px 50px;
+    background: black;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: glowFade 2s forwards;
+}
+
+#continueText {
+    font-size: 2rem;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 25px cyan;
+}
+
+@keyframes glowFade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Store Page */
+
+.nav {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav button {
+    background: black;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-family: 'Anton', sans-serif;
+    color: white;
+    cursor: pointer;
+    text-shadow: 0 0 10px white;
+    box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.description {
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 0 10px #4da6ff;
+}
