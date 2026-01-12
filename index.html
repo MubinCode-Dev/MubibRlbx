@@ -4,49 +4,79 @@
 <meta charset="UTF-8">
 <title>MubinRlbx</title>
 
-<!-- Anton Font -->
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #000000, #001f3f, #0066ff);
-        overflow: hidden;
-    }
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #001f3f, #0066ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Anton', sans-serif;
+    overflow: hidden;
+}
 
-    .text {
-        position: absolute;
-        font-size: 4rem;
-        font-family: 'Anton', sans-serif;
-        color: white;
-        text-shadow: 
-            0 0 10px white,
-            0 0 20px white,
-            0 0 40px #4da6ff;
-        opacity: 0;
-        animation: fade 4s forwards;
-    }
+.text {
+    position: absolute;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 15px white, 0 0 30px #4da6ff;
+    opacity: 0;
+    animation: fade 4s forwards;
+}
 
-    #second {
-        animation-delay: 4s;
-    }
+#second {
+    animation-delay: 4s;
+}
 
-    @keyframes fade {
-        0% { opacity: 0; }
-        25% { opacity: 1; }
-        75% { opacity: 1; }
-        100% { opacity: 0; }
-    }
+@keyframes fade {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+    75% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#continueBox {
+    display: none;
+    padding: 20px 50px;
+    background: black;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: glowFade 2s forwards;
+}
+
+#continueText {
+    font-size: 2rem;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 25px #00ffff;
+}
+
+@keyframes glowFade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 </style>
 </head>
 <body>
 
 <div class="text" id="first">Welcome to</div>
 <div class="text" id="second">MubinRlbx</div>
+
+<div id="continueBox" onclick="enterSite()">
+    <div id="continueText">Continue..</div>
+</div>
+
+<script>
+setTimeout(() => {
+    document.getElementById("continueBox").style.display = "block";
+}, 8500);
+
+function enterSite() {
+    document.getElementById("continueBox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
