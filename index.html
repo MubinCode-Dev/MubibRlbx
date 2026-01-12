@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MubinRlbx</title>
+
+<!-- Anton Font -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #000000, #001f3f, #0066ff);
+        overflow: hidden;
+    }
+
+    .text {
+        position: absolute;
+        font-size: 4rem;
+        font-family: 'Anton', sans-serif;
+        color: white;
+        text-shadow: 
+            0 0 10px white,
+            0 0 20px white,
+            0 0 40px #4da6ff;
+        opacity: 0;
+        animation: fade 4s forwards;
+    }
+
+    #second {
+        animation-delay: 4s;
+    }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        25% { opacity: 1; }
+        75% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<div class="text" id="first">Welcome to</div>
+<div class="text" id="second">MubinRlbx</div>
+
+</body>
+</html>
